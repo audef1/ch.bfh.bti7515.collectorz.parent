@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="ch.bfh.bti7515.collectorz.gamecollector.domain">
+        <class>ch.bfh.bti7515.collectorz.gamecollector.model.Collection</class>
+        <class>ch.bfh.bti7515.collectorz.gamecollector.model.Game</class>
+        <class>ch.bfh.bti7515.collectorz.gamecollector.model.Collector</class>
+        <class>ch.bfh.bti7515.collectorz.gamecollector.model.Platform</class>
+        <class>ch.bfh.bti7515.collectorz.gamecollector.model.Company</class>
+        <class>ch.bfh.bti7515.collectorz.gamecollector.model.Publisher</class>
+        <class>ch.bfh.bti7515.collectorz.gamecollector.model.Developer</class>
+    </persistence-unit>
+</persistence>

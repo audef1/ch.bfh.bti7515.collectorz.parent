@@ -6,7 +6,10 @@
 
     <groupId>collectorz</groupId>
     <artifactId>collectorz.parent</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
-
+    <modules>
+        <module>collectorz.domain</module>
+    </modules>
 
 </project>
