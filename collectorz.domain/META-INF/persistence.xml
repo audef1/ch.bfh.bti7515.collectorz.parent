@@ -9,5 +9,14 @@
         <class>ch.bfh.bti7515.collectorz.gamecollector.model.Company</class>
         <class>ch.bfh.bti7515.collectorz.gamecollector.model.Publisher</class>
         <class>ch.bfh.bti7515.collectorz.gamecollector.model.Developer</class>
+
+        <properties>
+            <property name="javax.persistance.jdbc.driver" value="org.h2.Driver" />
+            <property name="javax.persistance.jdbc.url" value="jdbc:h2:~/gamecollectorDB" />
+            <property name="javax.persistance.jdbc.user" value="bfh" />
+            <property name="javax.persistance.jdbc.password" value="bfh" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database" />
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+        </properties>
     </persistence-unit>
 </persistence>
