@@ -11,8 +11,11 @@ import javax.persistence.Query;
 import org.junit.Assert;
 import org.junit.Test;
 
+import ch.bfh.bti7515.collectorz.gamecollector.model.*;
+
+
 /**
- * @author rovi
+ * @author audef1
  * 
  */
 public class UpdateIT {
@@ -21,21 +24,21 @@ public class UpdateIT {
 	public void test() {
 
 		EntityManager em = Persistence.createEntityManagerFactory(
-				"ch.bfh.swos.bookapp.domain").createEntityManager();
+				"ch.bfh.bti7515.collectorz.gamecollector.domain").createEntityManager();
 
-		Query q = em.createQuery("select a from Author a");
+		Query q = em.createQuery("select c from Collector c");
 		@SuppressWarnings("unchecked")
-		List<Author> foundAuthors = q.getResultList();
-		Author firstAuthor = foundAuthors.get(0);
+		List<Collector> foundCollectors = q.getResultList();
+		Collector firstCollector = foundCollectors.get(0);
 
 		// Write access needs a transaction
 		em.getTransaction().begin();
-		firstAuthor.setLastname("OtherName");
+		firstCollector.setLastname("Meier");
 		em.getTransaction().commit();
 		// Entity is persisted automatically after commit because it is managed
 		// by jpa.
 
-		Assert.assertTrue(firstAuthor.getLastname().equals("OtherName"));
+		Assert.assertTrue(firstCollector.getLastname().equals("Meier"));
 	}
 
 }

@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -10,38 +6,65 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
+import ch.bfh.bti7515.collectorz.gamecollector.model.*;
+
 /**
- * @author rovi
+ * @author audef1
  * 
  */
 public class CreateIT {
 
 	@Test
 	public void test() {
-		Author author = new Author();
-		author.setFirstname("J.R.R");
-		author.setLastname("Tolkien");
+		Collector collector = new Collector();
+		collector.setFirstname("Florian");
+		collector.setLastname("Auderset");
+		collector.setUsername("FLOW");
+		collector.setPassword("123456");
+		collector.setCreated(new Date());
+		collector.setUpdated(new Date());
+		collector.setEnabled(true);
 
-		Book book = new Book();
-		book.setTitle("Der Herr der Ringe - Die Gefährten");
-		book.setReleaseDate(new Date());
+		Collection collection = new Collection();
+		collection.setName("NES Sammlung");
+		collection.setCreated(new Date());
+		collection.setUpdated(new Date());
+		collection.setEnabled(true);
 
-		Book book2 = new Book();
-		book2.setTitle("Der Herr der Ringe - Die zwei Türme");
-		book2.setReleaseDate(new Date());
+		Game game1 = new Game();
+		game1.setName("Contra");
+		game1.setDescription("Ein tolles Spiel.");
+		game1.setReleasedate(new Date());
+        game1.setRating(5);
+		game1.setCreated(new Date());
+		game1.setUpdated(new Date());
+		game1.setEnabled(true);
 
-		ArrayList<Book> books = new ArrayList<Book>();
-		books.add(book);
-		books.add(book2);
-		author.setBooks(books);
-		book.setAuthor(author);
-		book2.setAuthor(author);
+        Game game2 = new Game();
+        game2.setName("Super Mario 3");
+        game2.setDescription("Ein Klassiker!");
+        game2.setReleasedate(new Date());
+        game2.setRating(10);
+        game2.setCreated(new Date());
+        game2.setUpdated(new Date());
+        game2.setEnabled(true);
+
+		ArrayList<Game> games = new ArrayList<Game>();
+		games.add(game1);
+		games.add(game2);
+
+		collection.setGames(games);
+
+        ArrayList<Collection> collections = new ArrayList<Collection>();
+        collections.add(collection);
+
+        collector.setCollections(collections);
 
 		EntityManager em = Persistence.createEntityManagerFactory(
-				"ch.bfh.swos.bookapp.domain").createEntityManager();
+				"ch.bfh.bti7515.collectorz.gamecollector.domain").createEntityManager();
 
 		em.getTransaction().begin();
-		em.persist(author);
+		em.persist(collector);
 		em.getTransaction().commit();
 	}
 }

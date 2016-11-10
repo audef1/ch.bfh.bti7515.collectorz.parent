@@ -32,7 +32,7 @@ public class Collection {
         this.name = name;
     }
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Game> games;
 
     public List<Game> getGames() {

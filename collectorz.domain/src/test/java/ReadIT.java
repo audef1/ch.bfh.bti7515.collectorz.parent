@@ -11,8 +11,10 @@ import javax.persistence.Query;
 import org.junit.Assert;
 import org.junit.Test;
 
+import ch.bfh.bti7515.collectorz.gamecollector.model.*;
+
 /**
- * @author rovi
+ * @author audef1
  * 
  */
 public class ReadIT {
@@ -21,17 +23,17 @@ public class ReadIT {
 	public void test() {
 
 		EntityManager em = Persistence.createEntityManagerFactory(
-				"ch.bfh.swos.bookapp.domain").createEntityManager();
+				"ch.bfh.bti7515.collectorz.gamecollector.domain").createEntityManager();
 
-		Query q = em.createQuery("select a from Author a");
+		Query q = em.createQuery("select c from Collector c");
 		@SuppressWarnings("unchecked")
-		List<Author> foundAuthors = q.getResultList();
-		Author firstAuthor = foundAuthors.get(0);
-		Assert.assertTrue(firstAuthor.getLastname().equals("Tolkien"));
+		List<Collector> foundCollector = q.getResultList();
+		Collector firstCollector = foundCollector.get(0);
+		Assert.assertTrue(firstCollector.getFirstname().equals("Florian"));
 
-		List<Book> foundBooks = firstAuthor.getBooks();
-		Book firstBook = foundBooks.get(0);
-		Assert.assertTrue(firstBook.getTitle().startsWith("Der Herr der Ringe"));
+		List<Collection> foundCollections = firstCollector.getCollections();
+		Collection firstCollection = foundCollections.get(0);
+		Assert.assertTrue(firstCollection.getName().startsWith("NES"));
 	}
 
 }
