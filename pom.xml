@@ -10,6 +10,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>collectorz.domain</module>
+        <module>collectorz.rest</module>
+        <module>collectorz.service</module>
     </modules>
 
 </project>
