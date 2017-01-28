@@ -3,6 +3,9 @@
 	<name>collectorz.parent</name>
 	<comment></comment>
 	<projects>
+		<project>collectorz.domain</project>
+		<project>collectorz.rest</project>
+		<project>collectorz.service</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
