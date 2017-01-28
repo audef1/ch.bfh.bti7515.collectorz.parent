@@ -6,7 +6,6 @@
         <class>ch.bfh.bti7515.collectorz.gamecollector.model.Game</class>
         <class>ch.bfh.bti7515.collectorz.gamecollector.model.Collector</class>
         <class>ch.bfh.bti7515.collectorz.gamecollector.model.Platform</class>
-        <class>ch.bfh.bti7515.collectorz.gamecollector.model.Company</class>
         <class>ch.bfh.bti7515.collectorz.gamecollector.model.Publisher</class>
         <class>ch.bfh.bti7515.collectorz.gamecollector.model.Developer</class>
     </persistence-unit>
