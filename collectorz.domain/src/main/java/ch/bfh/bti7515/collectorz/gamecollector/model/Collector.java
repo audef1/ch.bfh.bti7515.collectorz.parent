@@ -78,6 +78,7 @@ public class Collector {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date created;
 
     public Date getCreated() {
@@ -89,6 +90,7 @@ public class Collector {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date updated;
 
     public Date getUpdated() {

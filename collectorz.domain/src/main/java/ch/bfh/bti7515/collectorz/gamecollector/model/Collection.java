@@ -44,6 +44,7 @@ public class Collection {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date created;
 
     public Date getCreated() {
@@ -55,6 +56,7 @@ public class Collection {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date updated;
 
     public Date getUpdated() {

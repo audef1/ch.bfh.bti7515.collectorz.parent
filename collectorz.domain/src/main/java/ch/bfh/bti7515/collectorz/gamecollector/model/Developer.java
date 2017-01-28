@@ -1,9 +1,6 @@
 package ch.bfh.bti7515.collectorz.gamecollector.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -24,6 +21,7 @@ public class Developer {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date created;
 
     public Date getCreated() {
@@ -46,6 +44,7 @@ public class Developer {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date updated;
 
     public Date getUpdated() {

@@ -55,6 +55,7 @@ public class Game {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date releasedate;
 
     public Date getReleasedate() {
@@ -66,6 +67,7 @@ public class Game {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date created;
 
     public Date getCreated() {
@@ -77,6 +79,7 @@ public class Game {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date updated;
 
     public Date getUpdated() {

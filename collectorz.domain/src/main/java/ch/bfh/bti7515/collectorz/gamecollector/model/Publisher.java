@@ -4,6 +4,9 @@ import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import java.util.Date;
 
 /**
@@ -35,6 +38,7 @@ public class Publisher {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date created;
 
     public Date getCreated() {
@@ -57,6 +61,7 @@ public class Publisher {
     }
 
     @Basic
+    @Temporal(TemporalType.DATE)
     private Date updated;
 
     public Date getUpdated() {
