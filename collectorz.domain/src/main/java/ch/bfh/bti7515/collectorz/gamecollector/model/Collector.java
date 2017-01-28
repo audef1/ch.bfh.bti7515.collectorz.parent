@@ -30,7 +30,7 @@ public class Collector {
     }
 
     public void setFirstname(String firstname) {
-        firstname = firstname;
+        this.firstname = firstname;
     }
 
     @Basic
@@ -41,7 +41,7 @@ public class Collector {
     }
 
     public void setLastname(String lastname) {
-        lastname = lastname;
+        this.lastname = lastname;
     }
 
     @Basic
@@ -52,7 +52,7 @@ public class Collector {
     }
 
     public void setUsername(String username) {
-        username = username;
+        this.username = username;
     }
 
     @Basic
@@ -63,7 +63,7 @@ public class Collector {
     }
 
     public void setPassword(String password) {
-        password = password;
+        this.password = password;
     }
 
     @OneToMany
