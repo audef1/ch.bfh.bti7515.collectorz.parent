@@ -9,47 +9,47 @@ import javax.inject.Named;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
-import ch.bfh.bti7515.collectorz.collectioncollector.model.Collection;
-import ch.bfh.bti7515.collectorz.collectioncollector.repository.CollectionRepository;
-import ch.bfh.bti7515.collectorz.service.CollectionService;
-import ch.bfh.bti7515.collectorz.service.dto.CollectionDTO;
+import ch.bfh.bti7515.collectorz.gamecollector.model.Collector;
+import ch.bfh.bti7515.collectorz.gamecollector.repository.CollectorRepository;
+import ch.bfh.bti7515.collectorz.service.CollectorService;
+import ch.bfh.bti7515.collectorz.service.dto.CollectorDTO;
 
 @Named
-public class DefaultCollectionService implements CollectionService {
+public class DefaultCollectorService implements CollectorService {
 
 	@Inject
-	private CollectionRepository collectionRepository;
+	private CollectorRepository collectorRepository;
 
 	private final ModelMapper mapper = new ModelMapper();
 
-	public CollectionDTO create(CollectionDTO collectionDto) {
-		Collection collection = mapper.map(collectionDto, Collection.class);
-		Collection persistedCollection = collectionRepository.save(collection);
-		return mapper.map(persistedCollection, CollectionDTO.class);
+	public CollectorDTO create(CollectorDTO collectorDto) {
+		Collector collector = mapper.map(collectorDto, Collector.class);
+		Collector persistedCollector = collectorRepository.save(collector);
+		return mapper.map(persistedCollector, CollectorDTO.class);
 	}
 
-	public CollectionDTO read(long id) {
-		Collection collection = collectionRepository.findOne(id);
-		if (collection == null) return null;
-        return mapper.map(collection, CollectionDTO.class);
+	public CollectorDTO read(long id) {
+		Collector collector = collectorRepository.findOne(id);
+		if (collector == null) return null;
+        return mapper.map(collector, CollectorDTO.class);
 	}
 
-	public Collection<CollectionDTO> list() {
-		Iterable<Collection> collections = collectionRepository.findAll();
-		Type listType = new TypeToken<Collection<CollectionDTO>>() {
+	public Collection<CollectorDTO> list() {
+		Iterable<Collector> collectors = collectorRepository.findAll();
+		Type listType = new TypeToken<Collection<CollectorDTO>>() {
 		}.getType();
-		return mapper.map(collections, listType);
+		return mapper.map(collectors, listType);
 	}
 
-	public CollectionDTO update(CollectionDTO collectionDto) {
-		Collection collection = mapper.map(collectionDto, Collection.class);
-		Collection updatedCollection = collectionRepository.save(collection);
-		return mapper.map(updatedCollection, CollectionDTO.class);
+	public CollectorDTO update(CollectorDTO collectorDto) {
+		Collector collector = mapper.map(collectorDto, Collector.class);
+		Collector updatedCollector = collectorRepository.save(collector);
+		return mapper.map(updatedCollector, CollectorDTO.class);
 	}
 
-	public void delete(CollectionDTO collectionDto) {
-		Collection collection = collectionRepository.findOne(collectionDto.getId());
-		collectionRepository.delete(collection);
+	public void delete(CollectorDTO collectorDto) {
+		Collector collector = collectorRepository.findOne(collectorDto.getId());
+		collectorRepository.delete(collector);
 	}
 
 }

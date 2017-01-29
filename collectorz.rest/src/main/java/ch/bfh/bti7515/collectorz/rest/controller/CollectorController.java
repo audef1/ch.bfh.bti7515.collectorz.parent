@@ -1,6 +1,6 @@
 package ch.bfh.bti7515.collectorz.rest.controller;
 
-import java.util.Collector;
+import java.util.Collection;
 
 import javax.inject.Inject;
 
@@ -39,7 +39,7 @@ public class CollectorController {
 	 */
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public Collector<CollectorDTO> getCollectors() {
+	public Collection<CollectorDTO> getCollectors() {
 		System.out.println("Collector of Collector requested");
 		return collectorService.list();
 	}

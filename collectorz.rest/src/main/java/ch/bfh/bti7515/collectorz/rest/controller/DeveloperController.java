@@ -1,6 +1,6 @@
-package ch.bfh.bti7515.developerz.rest.controller;
+package ch.bfh.bti7515.collectorz.rest.controller;
 
-import java.util.Developer;
+import java.util.Collection;
 
 import javax.inject.Inject;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import ch.bfh.bti7515.developerz.service.DeveloperService;
-import ch.bfh.bti7515.developerz.service.dto.DeveloperDTO;
+import ch.bfh.bti7515.collectorz.service.DeveloperService;
+import ch.bfh.bti7515.collectorz.service.dto.DeveloperDTO;
 
 @Controller
 @RequestMapping("/developers")
@@ -39,7 +39,7 @@ public class DeveloperController {
 	 */
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public Developer<DeveloperDTO> getDevelopers() {
+	public Collection<DeveloperDTO> getDevelopers() {
 		System.out.println("Developer of Developer requested");
 		return developerService.list();
 	}

@@ -9,8 +9,8 @@ import javax.inject.Named;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
-import ch.bfh.bti7515.collectorz.developercollector.model.Developer;
-import ch.bfh.bti7515.collectorz.developercollector.repository.DeveloperRepository;
+import ch.bfh.bti7515.collectorz.gamecollector.model.Developer;
+import ch.bfh.bti7515.collectorz.gamecollector.repository.DeveloperRepository;
 import ch.bfh.bti7515.collectorz.service.DeveloperService;
 import ch.bfh.bti7515.collectorz.service.dto.DeveloperDTO;
 

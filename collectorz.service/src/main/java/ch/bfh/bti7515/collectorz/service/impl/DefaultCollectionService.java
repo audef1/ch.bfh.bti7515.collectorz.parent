@@ -1,7 +1,6 @@
 package ch.bfh.bti7515.collectorz.service.impl;
 
 import java.lang.reflect.Type;
-import java.util.Collection;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -9,8 +8,8 @@ import javax.inject.Named;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
-import ch.bfh.bti7515.collectorz.collectioncollector.model.Collection;
-import ch.bfh.bti7515.collectorz.collectioncollector.repository.CollectionRepository;
+import ch.bfh.bti7515.collectorz.gamecollector.model.Collection;
+import ch.bfh.bti7515.collectorz.gamecollector.repository.CollectionRepository;
 import ch.bfh.bti7515.collectorz.service.CollectionService;
 import ch.bfh.bti7515.collectorz.service.dto.CollectionDTO;
 
@@ -34,9 +33,9 @@ public class DefaultCollectionService implements CollectionService {
         return mapper.map(collection, CollectionDTO.class);
 	}
 
-	public Collection<CollectionDTO> list() {
+	public java.util.Collection<CollectionDTO> list() {
 		Iterable<Collection> collections = collectionRepository.findAll();
-		Type listType = new TypeToken<Collection<CollectionDTO>>() {
+		Type listType = new TypeToken<java.util.Collection<CollectionDTO>>() {
 		}.getType();
 		return mapper.map(collections, listType);
 	}
